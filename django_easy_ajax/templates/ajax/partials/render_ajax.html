@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    var load = function(){
+        $.get("/easy_ajax/{{ strategy }}/{{ id }}/", function(data, status){
+            document.getElementById('ajax_container_{{ strategy }}_{{ id }}').innerHTML = data['content'];
+        });
+    }
+
+    if(window.addEventListener){
+        window.addEventListener('load', load)
+    }else{
+        window.attachEvent('onload', load)
+    }
+</script>
+
+<div id="ajax_container_{{ strategy }}_{{ id }}">
+</div>
